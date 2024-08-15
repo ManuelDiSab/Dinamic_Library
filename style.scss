@@ -1,0 +1,194 @@
+$menuB_Color:#28232c;
+$menuColor:#BF9B30;
+$bodyB_color:#dec7fa86;
+$BodyColor:#171D1C;
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+body{
+    background-color: $bodyB_color;
+    color: $BodyColor;
+    header{
+        background-color: $menuB_Color;
+        color: $menuColor;
+        display:flex;
+        border-bottom: 8px solid purple;
+        h2{
+            margin: 15px auto 15px auto;
+            font-size: 30px;
+        }
+        #bott{
+            margin: 15px 30px 15px 10px;  
+            background-color: $menuColor;
+            color: $menuB_Color;
+            padding: 10px;
+            border-radius: 20px;    
+            border: none;      
+            cursor: pointer;
+        }
+    }
+    img{
+        vertical-align: middle;
+    }
+    .container{
+        position: relative;
+        .mySlides{
+            display: none;
+        }        
+        .prev,
+        .next {
+        cursor: pointer;
+        position: absolute;
+        top: 40%;
+        width: auto;
+        padding: 16px;
+        margin-top: -50px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        -webkit-user-select: none;
+        }
+        /* Posiziono il "next button" sulla destra */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }/*Sull'hover, aggiungo un background nero leggermente trasparente */
+        .prev:hover,
+        .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+        }
+        //display del contatore delle foto (1/4 2/4 ecc..)
+        .numbertext {
+            color: #000000;
+            font-size: 18pxpx;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+        .caption-container {
+            text-align: center;
+            background-color: #222;
+            padding: 2px 16px;
+            color: $menuColor;
+        }
+        .row{
+            ::after{
+                content: "";
+                display: table;
+                clear: both;
+            }
+            .column {
+                float: left;
+                width: 20%;
+                .cursor{
+                    cursor: pointer;
+                }
+                .demo{
+                    opacity: 0.6;
+                }
+                .active,.demo:hover{
+                    opacity: 1;
+                }
+            }
+        }
+
+    }
+    .modal{
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: black;
+        background-color: rgba(0, 0, 0, 0.882);
+        .modal-content{
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+        #caption2{
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width:700px;
+            text-align: center;
+            color: $menuColor;
+            padding: 10px 0;
+            height: 150px;
+        }
+        .modal-content,#caption{
+            -webkit-animation-name: zoom;
+            -webkit-animation-duration: 0.6s;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+        @-webkit-keyframes zoom {
+            from{-webkit-transform: scale(0);}
+            to{-webkit-transform: scale(1);}
+        }
+        @keyframes zoom {
+            from{-webkit-transform: scale(0);}
+            to{-webkit-transform: scale(1);}
+        }
+        .close{
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: rgb(237, 235, 235);
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            &:hover,&:focus{
+                color: rgb(204, 204, 204);
+                text-decoration: none;
+                cursor: pointer;
+            }
+        }
+    }
+    .form{
+        background-color: rgba(255, 217, 0, 0.351);
+        margin: 200px auto;
+        width: 40%;
+        height: 30%;
+        border: 2px solid red;
+        border-radius: 20px;
+            h2{
+                text-align: center;
+                padding: 30px;
+            }
+            p{
+                text-align: center;
+                padding: 40px;
+                font-size: 20px;
+                input{
+                    width: 80%;
+                    margin: auto;
+                    text-align: center;
+                    padding: 10px;
+                    background-color: $menuB_Color;
+                    color: $menuColor;
+                    border-radius: 25px;
+                    border: 1.5px solid $menuColor;
+                    font-size: 20px;
+                }
+                #invia{
+                    width:60%;
+                    background-color:purple;
+                    color: white;
+                    border-radius: 25px;
+                    cursor: pointer;
+                }
+            }
+    }
+}
+
